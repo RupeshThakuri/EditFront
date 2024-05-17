@@ -3,7 +3,6 @@ import SingleTestimonial from "./SingleTestimonial";
 import Image from "next/image";
 import testimonialData from "./Testimonialdata";
 
-
 const Testimonials = () => {
   return (
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
@@ -14,20 +13,20 @@ const Testimonials = () => {
           center
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Testimonial cards */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {testimonialData.map((testimonial) => (
               <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
             ))}
           </div>
 
           {/* Image */}
-          <div className="hidden md:block relative">
+          <div className="hidden md:block">
             <Image
               src="/images/blog/post-01.jpg"
               alt="Your Image"
-              className="absolute top-20 right-0"
+              className="absolute top-400 right-10"
               width={500}
               height={500}
             />

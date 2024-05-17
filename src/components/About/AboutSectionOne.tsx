@@ -1,71 +1,35 @@
-import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
-
-const checkIcon = (
-  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
-    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
-  </svg>
-);
-
-const List = ({ text }) => (
-  <p className="mb-5 flex items-center text-lg font-medium text-body-color">
-    <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
-      {checkIcon}
-    </span>
-    {text}
-  </p>
-);
 
 const AboutSectionOne = () => {
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="Transforming Visions into Digital Realities"
-                paragraph="Aligned with our company's ethos and vision, 'Transforming Visions into Digital Realities' encapsulates our commitment to turning aspirations into tangible outcomes through innovative technology solutions."
-                mb="44px"
-              />
-
-              <div
-                className="mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Software Development" />
-                    <List text="Computer Networking" />
-                    <List text="Surveillance system" />
-                  </div>
-
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Web Application" />
-                    <List text="Mobile App" />
-                    <List text="Server Management" />
-                  </div>
-                </div>
+    <section id="about" className="pt-16 md:pt-20 lg:pt-28 relative overflow-hidden border-b-4 border-gray-200 pb-8">
+      <div className="container mx-auto relative z-10">
+        <SectionTitle
+          title="Our Organization Process Workflow"
+          paragraph="Since 2015, our organization team accelerates digital transformation for clients across industries. We employ a streamlined four-step process, ensuring swift, impactful solutions."
+          center={true}
+          className="custom-class" // Example of adding a custom class
+          mb="8" // Adjust margin bottom
+          width="600px" // Adjust width
+        />
+        <div className="flex justify-between items-center relative">
+          {['Analyze', 'Strategize', 'Implement', 'Monitor'].map((step, index) => (
+            <div className="relative flex flex-col items-center text-center p-4" key={index}>
+              <div className="w-12 h-12 mb-2 rounded-full bg-primary text-white flex items-center justify-center">
+                {index + 1}
               </div>
+              <h3 className="font-bold text-lg">{step}</h3>
+              <p className="mt-2">
+                {index === 0 && 'We analyze business IT needs, key pain areas, digitalization goals, and objectives.'}
+                {index === 1 && 'We identify areas for improvement and strategize to achieve desired goals.'}
+                {index === 2 && 'We implement the solutions and ensure proper integration with existing IT infrastructure.'}
+                {index === 3 && 'We monitor the performance of IT solutions and make changes to improve efficiency.'}
+              </p>
+              {index < 3 && (
+                <div className="absolute top-1/2 transform -translate-y-1/2 right-0 w-1 h-full bg-primary"></div>
+              )}
             </div>
-
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
-                <Image
-                  src="/images/about/6FNX.gif"
-                  alt="about-image"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/6FNX.gif"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -73,3 +37,11 @@ const AboutSectionOne = () => {
 };
 
 export default AboutSectionOne;
+
+
+
+
+
+
+
+

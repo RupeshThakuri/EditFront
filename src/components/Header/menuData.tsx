@@ -15,7 +15,7 @@ const menuData: Menu[] = [
   },
   {
     id: 33,
-    title: "Blog",
+    title: "BOD",
     path: "/blog",
     newTab: false,
   },
@@ -27,54 +27,56 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "Pages",
+    title: "Our Services",
     newTab: false,
     submenu: [
       {
         id: 41,
-        title: "About Page",
-        path: "/about",
+        title: "Application Development",
+        path: "/error",
         newTab: false,
+        submenu: [
+          {
+            id: 411,
+            title: "Web App Development",
+            path: "/error",
+            newTab: false,
+          },
+          {
+            id: 412,
+            title: "Mobile App Development",
+            path: "/error",
+            newTab: false,
+          },
+          {
+            id: 413,
+            title: "Desktop App Development",
+            path: "/error",
+            newTab: false,
+          },
+        ]
       },
       {
         id: 42,
-        title: "Contact Page",
-        path: "/contact",
+        title: "Network Management",
+        path: "/error",
         newTab: false,
       },
       {
         id: 43,
-        title: "Blog Grid Page",
-        path: "/blog",
+        title: "System And Server Management",
+        path: "/error",
         newTab: false,
       },
       {
         id: 44,
-        title: "Blog Sidebar Page",
-        path: "/blog-sidebar",
+        title: "Surveillance System",
+        path: "/error",
         newTab: false,
       },
       {
         id: 45,
-        title: "Blog Details Page",
-        path: "/blog-details",
-        newTab: false,
-      },
-      {
-        id: 46,
-        title: "Sign In Page",
-        path: "/signin",
-        newTab: false,
-      },
-      {
-        id: 47,
-        title: "Sign Up Page",
-        path: "/signup",
-        newTab: false,
-      },
-      {
-        id: 48,
-        title: "Error Page",
+        title: "Network Management",
         path: "/error",
         newTab: false,
       },

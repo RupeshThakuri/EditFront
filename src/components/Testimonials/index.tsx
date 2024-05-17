@@ -1,51 +1,37 @@
-import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
+import Image from "next/image";
+import testimonialData from "./Testimonialdata";
 
-const testimonialData: Testimonial[] = [
-  {
-    id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-01.png",
-    star: 5,
-  },
-  {
-    id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-02.png",
-    star: 5,
-  },
-  {
-    id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-03.png",
-    star: 5,
-  },
-];
 
 const Testimonials = () => {
   return (
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="What Makes Us A Top IT Organization in Nepal?"
+          paragraph="As a premier IT Organization in Nepal, we deliver cutting-edge technology solutions globally. With a pulse on evolving tech trends, we craft innovative solutions that power digital transformation and deliver impactful results."
           center
         />
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {testimonialData.map((testimonial) => (
-            <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+          {/* Testimonial cards */}
+          <div className="grid grid-cols-2 gap-4">
+            {testimonialData.map((testimonial) => (
+              <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
+            ))}
+          </div>
+
+          {/* Image */}
+          <div className="hidden md:block relative">
+            <Image
+              src="/images/blog/post-01.jpg"
+              alt="Your Image"
+              className="absolute top-20 right-0"
+              width={500}
+              height={500}
+            />
+          </div>
         </div>
       </div>
       <div className="absolute right-0 top-5 z-[-1]">

@@ -1,64 +1,85 @@
-"use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 
-import ModalVideo from "react-modal-video";
+const checkIcon = (
+  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
+    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
+  </svg>
+);
 
-const Video = () => {
-  const [isOpen, setOpen] = useState(false);
+const List = ({ text }) => (
+  <p className="mb-5 flex items-center text-lg font-medium text-body-color">
+    <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
+      {checkIcon}
+    </span>
+    {text}
+  </p>
+);
 
+const About = () => {
   return (
-    <section className="relative z-10 py-16 md:py-20 lg:py-28">
-      <div className="container">
-        <SectionTitle
-          title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-          center
-          mb="80px"
-        />
+    <section id="about" className="pt-16 md:pt-20 lg:pt-28 relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-primary to-transparent dark:from-gray-900 dark:to-gray-900 transform -skew-y-12"></div>
+      </div>
+      <div className="container relative">
+        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
+          <div className="-mx-4 flex flex-wrap items-center">
+            <div className="w-full px-4 lg:w-1/2">
+              <SectionTitle
+                title= 
+                " Transforming Visions into Reality!"
+                paragraph="Since 2015, we've been on an electrifying journey, collaborating with clients to craft software that sparks joy in users' hearts. What sets us apart? It's our unwavering dedication to transforming dreams into digital masterpieces."
+                mb="44px"
+              />
 
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div
-              className="mx-auto max-w-[770px] overflow-hidden rounded-md"
-              data-wow-delay=".15s"
-            >
-              <div className="relative aspect-[77/40] items-center justify-center">
-                <Image src="/images/video/first.png" alt="video image" fill />
-                <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
-                  <button
-                    aria-label="video play button"
-                    onClick={() => setOpen(true)}
-                    className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
-                  >
-                    <svg
-                      width="16"
-                      height="18"
-                      viewBox="0 0 16 18"
-                      className="fill-current"
-                    >
-                      <path d="M15.5 8.13397C16.1667 8.51888 16.1667 9.48112 15.5 9.86602L2 17.6603C1.33333 18.0452 0.499999 17.564 0.499999 16.7942L0.5 1.20577C0.5 0.43597 1.33333 -0.0451549 2 0.339745L15.5 8.13397Z" />
-                    </svg>
-                  </button>
+              <div
+                className="mb-12 max-w-[570px] lg:mb-0"
+                data-wow-delay=".15s"
+              >
+                <div className="mx-[-12px] flex flex-wrap">
+                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
+                    <List text="Software Development" />
+                    <List text="Computer Networking" />
+                    <List text="Surveillance system" />
+                  </div>
+
+                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
+                    <List text="Web Application" />
+                    <List text="Mobile App" />
+                    <List text="Server Management" />
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="w-full px-4 lg:w-1/2">
+              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
+                <video
+                  src="/images/video/mobile.mp4"
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                />
+                <video
+                  src="/images/video/mobile.mp4"
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <ModalVideo
-        channel="youtube"
-        autoplay={true}
-        start={true}
-        isOpen={isOpen}
-        videoId="4E5iFVPU3FA"
-        onClose={() => setOpen(false)}
-      />
     </section>
   );
 };
 
-export default Video;
+export default About;
+

@@ -1,21 +1,17 @@
-import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
+// src/app/blog/ClientBlog.tsx
+
+"use client";
+
+import SingleBlog from "@/components/BOD/SingleBlog";
+import blogData from "@/components/BOD/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Blog Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Blog Page for Startup Nextjs Template",
-  // other metadata
-};
-
-const Blog = () => {
+const ClientBlog = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Board Member"
+        description="At Edit Enterprises, our success is driven by the guidance and expertise of our esteemed Board of Directors. With diverse backgrounds spanning technology, finance, marketing, and operations, our board is dedicated to upholding our core values and delivering exceptional results for our clients and stakeholders. Meet the leaders shaping the future of Edit Enterprises below."
       />
 
       <section className="pb-[120px] pt-[120px]">
@@ -96,4 +92,5 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default ClientBlog;
+

@@ -18,7 +18,7 @@ const featuresData: Feature[] = [
   },
   {
     id: 1,
-    icon: <FaMobileAlt className="text-4xl text-amber-600"/>,
+    icon: <FaMobileAlt className="text-4xl text-amber-600" />,
     title: "Mobile App Development",
     paragraph:
       "Want to build a high performing iOS or Android mobile application? Your search ends here",

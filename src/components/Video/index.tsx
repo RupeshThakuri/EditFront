@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 
@@ -28,16 +27,12 @@ const About = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title= 
-                " Transforming Visions into Reality!"
+                title="Transforming Visions into Reality!"
                 paragraph="Since 2015, we've been on an electrifying journey, collaborating with clients to craft software that sparks joy in users' hearts. What sets us apart? It's our unwavering dedication to transforming dreams into digital masterpieces."
                 mb="44px"
               />
 
-              <div
-                className="mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
+              <div className="mb-12 max-w-[570px] lg:mb-0" data-wow-delay=".15s">
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Software Development" />
@@ -55,22 +50,16 @@ const About = () => {
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
-                <video
-                  src="/images/video/mobile.mp4"
-                  controls
-                  autoPlay
-                  loop
-                  muted
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+              <div className="relative mx-auto max-w-[500px] lg:mr-0">
+                <img
+                  src="/images/video/video1.gif"
+                  alt="Animation"
+                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0 w-[500px] h-[600px]" // Adjust the width and height as needed
                 />
-                <video
-                  src="/images/video/mobile.mp4"
-                  controls
-                  autoPlay
-                  loop
-                  muted
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                <img
+                  src="/images/video/video1.gif"
+                  alt="Animation"
+                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0 w-[400px] h-[400px]" // Adjust the width and height as needed
                 />
               </div>
             </div>
@@ -82,4 +71,7 @@ const About = () => {
 };
 
 export default About;
+
+
+
 

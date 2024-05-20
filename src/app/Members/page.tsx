@@ -1,6 +1,6 @@
 import React from 'react'
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import AllMembers from '@/components/Members/AllMembers';
+import AllMembers from '@/components/Member/AllMembers';
 
 import { Metadata } from "next";
 

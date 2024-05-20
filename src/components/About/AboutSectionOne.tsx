@@ -18,7 +18,7 @@ const AboutSectionOne = () => {
               <div className="w-12 h-12 md:w-16 md:h-16 mb-2 rounded-full bg-primary text-white flex items-center justify-center text-lg md:text-xl">
                 {index + 1}
               </div>
-              <h3 className="font-bold text-lg md:text-xl">{step}</h3>
+              <h3 className="font-bold text-lg md:text-xl text-orange-500">{step}</h3>
               <p className="mt-2 text-sm md:text-base">
                 {index === 0 && 'We analyze business IT needs, key pain areas, digitalization goals, and objectives.'}
                 {index === 1 && 'We identify areas for improvement and strategize to achieve desired goals.'}
@@ -37,6 +37,7 @@ const AboutSectionOne = () => {
 };
 
 export default AboutSectionOne;
+
 
 
 

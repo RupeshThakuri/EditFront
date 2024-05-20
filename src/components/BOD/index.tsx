@@ -1,21 +1,27 @@
 "use client"
 import React, { useState } from 'react';
 import Link from 'next/link';
+import MemberIndex from "@/components/BOD";
 
 const Blog = () => {
   const [showMembers, setShowMembers] = useState(false);
 
-  // Function to toggle the visibility of member cards
-  const handleToggleMembers = () => {
-    setShowMembers(!showMembers);
-  };
-
   return (
     <section
       id="blog"
-      className="bg-gradient-to-b from-gray-light to-gray-dark dark:bg-gradient-to-b from-bg-color-light to-bg-color-dark py-16 md:py-20 lg:py-28 rounded-t-3xl"
+      className="relative bg-gradient-to-b from-gray-light to-gray-dark dark:bg-gradient-to-b from-bg-color-light to-bg-color-dark py-16 md:py-20 lg:py-28 rounded-t-3xl"
     >
-      <div className="container flex flex-col justify-center items-center">
+      <video 
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/images/video/second.mp4" 
+        autoPlay 
+        loop 
+        muted 
+      ></video>
+      
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div> {/* Overlay to darken the video */}
+      
+      <div className="relative container flex flex-col justify-center items-center">
         <div className="w-full">
           <div className="flex justify-center mb-8">
             <div className="w-32 h-32 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
@@ -42,14 +48,13 @@ const Blog = () => {
           </div>
         )}
 
-        {/* Render the link to toggle member visibility */}
+        {/* Render the link to navigate to the blog page */}
         <div className="text-center mt-8">
           <Link href="/blog" passHref>
             <span
               className="text-primary font-medium underline cursor-pointer inline-block animate-pulse"
-              onClick={handleToggleMembers}
             >
-              {showMembers ? 'Hide Board of Directors' : 'See other Board of Directors'}
+              See other Board of Directors
             </span>
           </Link>
         </div>
@@ -59,6 +64,7 @@ const Blog = () => {
 };
 
 export default Blog;
+
 
 
 

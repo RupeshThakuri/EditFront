@@ -7,7 +7,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
     <div className="w-full p-6 bg-white rounded-md shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-800">
       <div className="flex items-center">
         <div>
-          <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-gray-300">
+          <h3 className="mb-2 text-lg font-semibold text-orange-500">
             {name}
           </h3>
         </div>

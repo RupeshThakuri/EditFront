@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackgroundVideo = () => {
+const BackgroundVideo = ({video}) => {
   return (
     <div className="absolute inset-0 overflow-hidden z-0">
       <video
@@ -10,12 +10,10 @@ const BackgroundVideo = () => {
         muted
         playsInline
       >
-        <source src="/images/video/video.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
     </div>
   );
 };
 
 export default BackgroundVideo;
-
-

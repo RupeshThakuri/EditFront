@@ -74,16 +74,16 @@ export default function ScrollToTop() {
                 className="rounded-full w-12 h-12 object-cover blink cursor-pointer" 
               />
               {isModalOpen && (
-                <div className="absolute top-14 right-0 z-[100] flex items-center justify-center bg-black bg-opacity-50">
-                  <div className="bg-white rounded-lg p-6 w-96 relative">
+                <div className="absolute right-16 z-[100] flex items-center justify-center bg-black bg-opacity-50" style={{bottom: '-26.7px'}}>
+                  <div className="bg-white rounded-lg p-6 lg:w-96 w-56 relative">
                     <button
                       onClick={dismissModal}
                       className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
                     >
                       &times;
                     </button>
-                    <h2 className="text-xl font-semibold mb-4">Vacancy Details</h2>
-                    <p className="text-gray-700">Here you can display detailed information about the vacancy.</p>
+                    <h2 className="text-xl font-semibold mb-4 dark:text-black">See The Opening</h2>
+                    <p className="text-gray-700">Want to see the detail <a href="/vacancy" className="text-blue-500 hover:underline">Click Me..!</a></p>
                   </div>
                 </div>
               )}

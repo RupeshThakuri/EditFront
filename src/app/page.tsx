@@ -9,7 +9,6 @@ import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
-import Vacancy from "@/components/Vacancy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,7 +31,6 @@ export default function Home() {
       <Gallery/>
       <Blog />
       <Contact />
-      <Vacancy />
     </>
   );
 }

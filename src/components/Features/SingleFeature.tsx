@@ -4,7 +4,7 @@ import { Feature } from "@/types/feature";
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-600 group hover:cursor-pointer dark:hover:bg-blue-600 ">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-600 group hover:cursor-pointer dark:hover:bg-blue-600 h-64 w-auto">
       <div className="service_icon mb-4">
         {icon}
       </div>

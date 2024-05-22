@@ -1,6 +1,6 @@
 import React from 'react';
 import VacancyCard from './VacancyCard';
-import vacanciesData from './Vacancydata';
+import vacanciesData from './VacancyData';
 
 const YourComponent = () => {
   return (

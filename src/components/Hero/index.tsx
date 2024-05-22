@@ -1,22 +1,54 @@
-import React from 'react';
+"use client"
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import BackgroundVideo from './backgroundvideo';
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [hideVideo,setHideVideo] = useState(false);
+
+  const vidoeSrc = {
+    video1: '/images/video/video.mp4',
+    video2: '/images/video/video2.mp4',
+  }
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      setIsVisible(false);
+    }
+
+    const timer = setTimeout(() => {
+      setHideVideo(true);
+    }, 7300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
   return (
     <>
       <section
         id="home"
         className="relative z-10 overflow-hidden bg-white dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
+
         <div className="container relative flex flex-col md:flex-row">
           {/* Left half: Video */}
-          <div className="w-full md:w-8/12">
-            <div className="w-full h-full max-w-[900px]">
-              <BackgroundVideo />
-            </div>
-          </div>
-
+          {isVisible ?
+            (<div className="w-full md:w-8/12">
+              <div className="w-full h-full max-w-[900px]">
+                <BackgroundVideo video={vidoeSrc.video1} />
+              </div>
+            </div>) : (
+              <div className={`w-full md:w-8/12 ${hideVideo? "hidden":"block"}`}>
+                <div className="w-full h-full max-w-[900px]">
+                  <BackgroundVideo video={vidoeSrc.video2} />
+                </div>
+              </div>)
+          }
           {/* Right half: Welcome content */}
           <div className="w-full md:w-4/12 px-4 py-12 md:py-0 flex items-center">
             <div className="mx-auto max-w-[800px] text-center">

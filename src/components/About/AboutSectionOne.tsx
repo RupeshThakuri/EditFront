@@ -2,7 +2,7 @@ import SectionTitle from "../Common/SectionTitle";
 
 const AboutSectionOne = () => {
   return (
-    <section id="about" className="pt-8 md:pt-12 lg:pt-16 relative overflow-hidden border-b-4 border-gray-200 pb-8">
+    <section id="about" className="pt-8 md:pt-12 lg:pt-16 relative overflow-hidden border-b-4 border-gray-200">
       <div className="container mx-auto relative z-10">
         <SectionTitle
           title="Our Organization Process Workflow"

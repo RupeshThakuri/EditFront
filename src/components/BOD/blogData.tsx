@@ -25,7 +25,7 @@ const members: Members[] = [
   {
     id: 3,
     name: "Roji Timsina Poudel",
-    detail: "A long experience in event management and marketing",
+    detail: "A long experience in marketing field",
     position: "Board of Director",
     image: "/images/members/rt.jpg",
     fblink: "facebook.com",

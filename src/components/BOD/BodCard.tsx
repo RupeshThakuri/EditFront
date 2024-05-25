@@ -13,7 +13,7 @@ const BodCard = ({ member }: { member: Members }) => {
   }
 
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg flex flex-col cursor-pointer border border-gray-200 hover:border-indigo-500 transition duration-300">
+    <div className="rounded-lg overflow-hidden shadow-lg flex flex-col cursor-pointer border border-gray-200 hover:border-indigo-500 transition duration-300 mr-5">
       <div className="relative w-full h-48 md:h-64">
         <Image
           className="object-cover w-full h-full"

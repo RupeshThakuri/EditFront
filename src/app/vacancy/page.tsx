@@ -15,7 +15,7 @@ const member = () => {
     <>
       <Breadcrumb
         pageName="Vacancy Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        description="To apply for a position at Edit Enterprises, please submit your resume and cover letter to [email address]. Be sure to include the title of the position you're applying for in the subject line. Our team will review your application and reach out to qualified candidates for further consideration."
       />
       <YourComponent/>
     </>

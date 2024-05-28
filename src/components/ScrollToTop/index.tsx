@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalDismissed, setIsModalDismissed] = useState(false);
 
   // Custom CSS for blinking animation
   const styles = `
@@ -28,10 +29,18 @@ export default function ScrollToTop() {
     setIsModalOpen(!isModalOpen);
   };
 
+  const dismissModal = () => {
+    setIsModalOpen(false);
+    setIsModalDismissed(true);
+  };
+
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
+        if (!isModalDismissed) {
+          setIsModalOpen(true);
+        }
       } else {
         setIsVisible(false);
       }
@@ -39,18 +48,10 @@ export default function ScrollToTop() {
 
     window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
-  useEffect(() => {
-    // Automatically open the modal 5 seconds after the page is loaded
-    const timer = setTimeout(() => {
-      setIsModalOpen(true);
-    }, 5000);
-
-    // Cleanup timer on component unmount
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, [isModalDismissed]);
 
   return (
     <>
@@ -65,34 +66,35 @@ export default function ScrollToTop() {
             >
               <span className="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white"></span>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="relative flex items-center justify-center">
               <img
                 onClick={toggleModal}
                 src="/images/logo/vacancy.jpeg" // Placeholder image URL; replace with the actual vacancy photo URL
                 alt="Vacancy"
                 className="rounded-full w-12 h-12 object-cover blink cursor-pointer" 
               />
+              {isModalOpen && (
+                <div className="absolute right-16 z-[100] flex items-center justify-center bg-black bg-opacity-50" style={{bottom: '-26.7px'}}>
+                  <div className="bg-white rounded-lg p-6 lg:w-96 w-56 relative">
+                    <button
+                      onClick={dismissModal}
+                      className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+                    >
+                      &times;
+                    </button>
+                    <h2 className="text-xl font-semibold mb-4 dark:text-black">See The Opening</h2>
+                    <p className="text-gray-700">Want to see the detail <a href="/vacancy" className="text-blue-500 hover:underline">Click Me..!</a></p>
+                  </div>
+                </div>
+              )}
             </div>
           </>
         )}
       </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-6 w-96 relative">
-            <button
-              onClick={toggleModal}
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-            >
-              &times;
-            </button>
-            <h2 className="text-xl font-semibold mb-4">Vacancy Details</h2>
-            <p className="text-gray-700">Here you can display detailed information about the vacancy.</p>
-          </div>
-        </div>
-      )}
     </>
   );
 }
+
+
 
 

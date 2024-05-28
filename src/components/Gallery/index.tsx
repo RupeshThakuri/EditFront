@@ -7,11 +7,13 @@ const Gallery = () => {
     <>
       <div className='container'>
         <SectionTitle
-          title="Our Motive"
+          className="mt-11"
+          title="Our Environment"
           paragraph="We intertwine work and enjoyment to enhance creativity and productivity"
           center
         />
-        <div>
+        <div className='container mt-1 -mt-5'>
+          
           <Cards />
         </div>
       </div>

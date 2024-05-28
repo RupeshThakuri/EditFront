@@ -16,7 +16,7 @@ interface socialLinks {
 const socialLinks: socialLinks[] = [
     {
         imgSrc: '/assets/footer/facebook.svg',
-        link: 'www.facebook.com',
+        link: 'https://www.facebook.com/profile.php?id=100057636332488',
         width: 10
     },
     {
@@ -31,7 +31,7 @@ const socialLinks: socialLinks[] = [
     },
     {
         imgSrc: '/assets/footer/youtube.svg',
-        link: 'www.youtube.com',
+        link: 'https://www.youtube.com/watch?v=H87AzJmjbT',
         width: 14
     },
 ]
@@ -86,7 +86,7 @@ const Footer = () => {
                         <ul>
                             {product.link.map((link: string, index: number) => (
                                 <li key={index} className='mb-2'>
-                                    <Link href="/" className="text-darkgray dark:text-gray-300 text-base font-normal space-links">{link}</Link>
+                                    <Link href={link} className="text-darkgray dark:text-gray-300 text-base font-normal space-links">{link}</Link>
                                 </li>
                             ))}
                         </ul>

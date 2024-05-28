@@ -11,7 +11,6 @@ import featuresData from './featuresData';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 
-
 const Cardslide = () => {
     useEffect(() => {
         const config = {
@@ -46,6 +45,7 @@ const Cardslide = () => {
                 </ul>
             </div>
             <div className="glide__arrows" data-glide-el="controls">
+<<<<<<< HEAD
                 <a className="glide__arrow glide__arrow--left left-4" data-glide-dir="<">
                     <div className="h-9 w-9  rounded-xl flex justify-center items-center my-auto duration-300 ease-in-out">
                         <i className="fas fa-angle-left text-black text-2xl"><FaChevronCircleLeft/></i>
@@ -54,6 +54,16 @@ const Cardslide = () => {
                 <a className="glide__arrow glide__arrow--right right-4" data-glide-dir=">">
                     <div className="h-9 w- rounded-xl flex justify-center items-center my-auto  duration-300 ease-in-out">
                         <i className="fas fa-angle-right text-black text-2xl"><FaChevronCircleRight/></i>
+=======
+                <a className="glide__arrow glide__arrow--left left-4 md:mr-5" data-glide-dir="<">
+                    <div className="h-9 w-9  rounded-xl flex justify-center items-center my-auto duration-300 ease-in-out">
+                        <i className="fas fa-angle-left text-black text-2xl dark:text-white"><FaChevronCircleLeft/></i>
+                    </div>
+                </a>
+                <a className="glide__arrow glide__arrow--right right-4 md:ml-5" data-glide-dir=">">
+                    <div className="h-9 w- rounded-xl flex justify-center items-center my-auto  duration-300 ease-in-out">
+                        <i className="fas fa-angle-right text-black text-2xl dark:text-white"><FaChevronCircleRight/></i>
+>>>>>>> 6a8307da83a6c71fe7c18e3e7fd7b40fcc3ebba6
                     </div>
                 </a>
             </div>

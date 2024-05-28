@@ -1,6 +1,7 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Blog from "@/components/BOD";
+import Blog from "@/components/Blog";
+import BOD from "@/components/BOD";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
@@ -9,7 +10,7 @@ import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
-import Vacancy from "@/components/Vacancy";
+import NoticeModal from "@/components/NoticeModal"; // Updated import statement
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,11 +29,12 @@ export default function Home() {
       <Brands />
       <AboutSectionOne />
       <AboutSectionTwo />
+      <Blog />
       <Testimonials />
       <Gallery/>
-      <Blog />
+      <BOD/>
       <Contact />
-      <Vacancy />
+      <NoticeModal /> {/* Added NoticeModal component */}
     </>
   );
 }

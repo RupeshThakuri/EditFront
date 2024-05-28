@@ -36,7 +36,7 @@ const testimonialData: Testimonial[] = [
       id: 6,
       name: "On-time Delivery",
       content:
-        "We deliver projects on time and respect every deadline that we set with the agile development process.",
+        "We deliver projects on time and respect every deadline that we set with the agile development.",
     },
   ];
 

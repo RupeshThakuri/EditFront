@@ -1,10 +1,9 @@
-"use client"
-
+"use client";
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Slider from "react-slick";
 import GalleryData from "./GalleryData";
-import "./Gallery.css";
+import "./Gallery.css"; // You can define additional styles in this CSS file
 
 const Cards = () => {
     const [slidesToShow, setSlidesToShow] = useState(4);
@@ -43,31 +42,29 @@ const Cards = () => {
     };
 
     return (
-        <>
-            <div className="slider-container">
-                <Slider {...settings}>
-                    {GalleryData.map((entry) => (
-                        <div id="card_area" key={entry.id}>
-                            <figure className="snip1563">
-                                <Image
-                                    src={entry.image}
-                                    alt="sample110" object-fill
-                                    layout="fill" 
-                                    objectFit="cover"
-                                />
-                                <figcaption>
-                                    <h3>{entry.title}</h3>
-                                    <p>
-                                        {entry.paragraph}
-                                    </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    ))}
-                </Slider>
-            </div>
-        </>
-    )
-}
+        <div className="slider-container">
+            <Slider {...settings}>
+                {GalleryData.map((entry) => (
+                    <div id="card_area" key={entry.id} className="ml-5">
+                        <figure className="snip1563">
+                            <Image
+                                src={entry.image}
+                                alt="sample110" object-fill
+                                layout="fill" 
+                                objectFit="cover"
+                                className="image" // Add a class for styling
+                            />
+                            <figcaption>
+                                <h3>{entry.title}</h3>
+                                <p>{entry.paragraph}</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                ))}
+            </Slider>
+        </div>
+    );
+};
 
 export default Cards;
+

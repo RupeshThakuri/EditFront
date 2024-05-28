@@ -1,10 +1,15 @@
-export type Members = {
-  id: number;
+type Author = {
   name: string;
-  detail: string;
-  position: string;
   image: string;
-  fblink: string;
-  instalink: string;
-  linkedinlink: string; 
+  designation: string;
+};
+
+export type Blog = {
+  id: number;
+  title: string;
+  paragraph: string;
+  image: string;
+  author: Author;
+  tags: string[];
+  publishDate: string;
 };

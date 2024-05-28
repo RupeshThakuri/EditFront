@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import MemberIndex from "@/components/BOD";
 
-const Blog = () => {
+const Bod = () => {
   const [showMembers, setShowMembers] = useState(false);
 
   return (
     <section
       id="blog"
-      className="relative bg-gradient-to-b from-gray-light to-gray-dark dark:bg-gradient-to-b from-bg-color-light to-bg-color-dark py-16 md:py-20 lg:py-28 rounded-t-3xl"
+      className="relative bg-gradient-to-b from-gray-light to-gray-dark dark:bg-gradient-to-b from-bg-color-light to-bg-color-dark py-16 md:py-20 lg:py-28 rounded-t-3xl mt-8 "
     >
       <video 
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -50,7 +50,7 @@ const Blog = () => {
 
         {/* Render the link to navigate to the blog page */}
         <div className="text-center mt-8">
-          <Link href="/blog" passHref>
+          <Link href="/bod" passHref>
             <span
               className="text-primary font-medium underline cursor-pointer inline-block animate-pulse"
             >
@@ -63,7 +63,7 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Bod;
 
 
 
